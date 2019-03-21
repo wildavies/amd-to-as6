@@ -25,7 +25,7 @@ program
     .option('-I --indent [size]',
             'Sets the indent size for jsbeautify',
             4)
-    .option('-c --config [filepath]',
+    .option('-c --config <filepath>',
             'Pass the config file path containing dependency paths',
             '/Users/wildavie1/Documents/Dev/Helios-Sapient/helios-id/helios/static/common-assets/scripts/config.js')
     .parse(process.argv);
