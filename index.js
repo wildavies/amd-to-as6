@@ -159,7 +159,7 @@ function getImportStatements (dependencies, options) {
     }
     
     if (options.config) {
-        statements.unshift('import { AMD_IMPORT_CONFIG } from ' + options.config + ';');
+        statements.unshift('import { AMD_IMPORT_CONFIG } from \'' + options.config + '\';');
     }
 
     return statements.join(os.EOL);
