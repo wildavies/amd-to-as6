@@ -116,7 +116,7 @@ function convert (source, options) {
     });
 
     // start with import statements
-    var moduleCode = getImportStatements(dependenciesMap);
+    var moduleCode = getImportStatements(dependenciesMap, options);
 
     // add modules code
     moduleCode += getModuleCode(moduleFunc);
@@ -139,9 +139,10 @@ function convert (source, options) {
  * Takes an object where the keys are module paths and the values are
  * the import names and returns the import statements as a string.
  * @param {object} dependencies
+ * @param {object} options
  * @returns {string}
  */
-function getImportStatements (dependencies) {
+function getImportStatements (dependencies, options) {
     var statements = [];
 
     for (var key in dependencies) {
