@@ -149,9 +149,16 @@ function getImportStatements (dependencies) {
         if (!dependencies[key]) {
             statements.push('import ' + key + ';');
         }
+        else if (options.config) {     
+            statements.push('import ' + dependencies[key] + ' from AMD_IMPORT_CONFIG[key];');
+        } 
         else {
             statements.push('import ' + dependencies[key] + ' from ' + key + ';');
         }
+    }
+    
+    if (options.config) {
+        statements.unshift(`import { AMD_IMPORT_CONFIG } from ${options.config};`);
     }
 
     return statements.join(os.EOL);
